@@ -29,5 +29,13 @@
     <packaging>jar</packaging>
     <name>commons :: utility</name>
     <dependencies>
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
     </dependencies>
 </project>
