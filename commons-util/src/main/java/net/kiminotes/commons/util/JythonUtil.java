@@ -13,7 +13,7 @@ import org.python.util.PythonInterpreter;
  */
 public final class JythonUtil {
 
-    private static final Log LOGGER = LogFactory.getLog(JythonUtil.class);
+    private static final Log LOG = LogFactory.getLog(JythonUtil.class);
 
     private static PythonInterpreter INTERPRETER;
     private static PyObject          METHOD_QUOTE_PLUS;
@@ -45,8 +45,8 @@ public final class JythonUtil {
             throw new RuntimeException("Failed to load urllib.quote");
         }
 
-        if (LOGGER.isInfoEnabled()) {
-            LOGGER.info("Load jython successfully");
+        if (LOG.isInfoEnabled()) {
+            LOG.info("Load jython successfully");
         }
     }
 
@@ -71,8 +71,8 @@ public final class JythonUtil {
                 return result.__tojava__(String.class).toString();
             }
         } catch (Throwable e) {
-            if (LOGGER.isWarnEnabled()) {
-                LOGGER.warn("Failed to execute unquote " + string, e);
+            if (LOG.isWarnEnabled()) {
+                LOG.warn("Failed to execute unquote " + string, e);
             }
         }
         throw new RuntimeException("Failed to execute unquote " + string);
@@ -86,8 +86,8 @@ public final class JythonUtil {
                 return result.__tojava__(String.class).toString();
             }
         } catch (Throwable e) {
-            if (LOGGER.isWarnEnabled()) {
-                LOGGER.warn("Failed to execute quote " + string, e);
+            if (LOG.isWarnEnabled()) {
+                LOG.warn("Failed to execute quote " + string, e);
             }
         }
         throw new RuntimeException("Failed to execute quote " + string);
@@ -108,8 +108,8 @@ public final class JythonUtil {
                 return result.__tojava__(String.class).toString();
             }
         } catch (Throwable e) {
-            if (LOGGER.isWarnEnabled()) {
-                LOGGER.warn("Failed to execute quote_plus " + string, e);
+            if (LOG.isWarnEnabled()) {
+                LOG.warn("Failed to execute quote_plus " + string, e);
             }
         }
         throw new RuntimeException("Failed to execute quote_plus " + string);
